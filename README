@@ -1,0 +1,12 @@
+This is a GPL implementation of a basic REST client API for Android. 
+It handles all the different Http* objects from the Apache HttpClient
+project and gives you a nice string output of the request's results.
+
+Contributing: I'd like to know before you just start pushing stuff to
+the repo. Send me an email at LinuxMercedes@gmail.com if you want to help.
+
+Todo:
+Lots of testing
+Add support for insecure SSL certificates. 
+???
+Profit!
