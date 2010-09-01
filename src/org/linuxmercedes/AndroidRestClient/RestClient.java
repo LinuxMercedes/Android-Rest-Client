@@ -34,6 +34,21 @@ public class RestClient
 		return request(get);
 	}
 
+  /**
+	 * Makes a get request to the url with a custom content-type
+	 * @param url URL for request
+   * @param ct Content-type
+	 * @return result of request
+	 * @throws NetworkException Exception for network communicaton errors
+	 * @throws RequestException Exception for HTTP errors.
+	 */
+	public static String get(String url, String ct) throws NetworkException, RequestException
+	{
+		HttpGet get = new HttpGet(url);
+    get.addHeader("content-type", ct);
+		return request(get);
+	}
+
 	/**
 	 * Makes a put request to the url
 	 * @param url URL for request
@@ -48,6 +63,21 @@ public class RestClient
 	}
 
 	/**
+	 * Makes a put request to the url with a custom content-type
+	 * @param url URL for request
+   * @param ct Content-type
+	 * @return result of request
+	 * @throws NetworkException Exception for network communicaton errors
+	 * @throws RequestException Exception for HTTP errors.
+	 */
+	public static String put(String url) throws NetworkException, RequestException
+	{
+		HttpPut put = new HttpPut(url);
+    put.addHeader("content-type", ct);
+		return request(put);
+	}
+
+	/**
 	 * Makes a post request to the url
 	 * @param url URL for request
 	 * @return result of request
@@ -57,6 +87,21 @@ public class RestClient
 	public static String post(String url) throws NetworkException, RequestException
 	{
 		HttpPost post = new HttpPost(url);
+		return request(post);
+	}
+
+  /**
+	 * Makes a post request to the url with a custom content-type
+	 * @param url URL for request
+   * @param ct content-type
+	 * @return result of request
+	 * @throws NetworkException Exception for network communicaton errors
+	 * @throws RequestException Exception for HTTP errors.
+	 */
+	public static String post(String url) throws NetworkException, RequestException
+	{
+		HttpPost post = new HttpPost(url);
+    post.addHeader("content-type", ct);
 		return request(post);
 	}
 
